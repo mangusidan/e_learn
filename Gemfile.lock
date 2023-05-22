@@ -74,7 +74,6 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
-    byebug (11.1.3)
     capybara (3.28.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -117,6 +116,9 @@ GEM
       minitest (>= 3.0)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
+    importmap-rails (1.1.6)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.6.0)
     irb (1.6.4)
       reline (>= 0.3.0)
@@ -243,7 +245,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.0)
+    sqlite3 (1.6.3-x86_64-linux)
     thor (1.2.2)
     tilt (2.1.0)
     timeout (0.3.2)
@@ -281,12 +283,12 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
-  byebug
   capybara (= 3.28.0)
   debug
   devise (~> 4.1)
   guard (= 2.15.0)
   guard-minitest (= 2.4.6)
+  importmap-rails (~> 1.1)
   jbuilder
   listen
   minitest (= 5.18.0)
@@ -299,12 +301,12 @@ DEPENDENCIES
   selenium-webdriver (= 3.142.4)
   spring (= 2.1.0)
   spring-watcher-listen (= 2.0.1)
-  sqlite3 (= 1.4)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   web-console (= 4.0.1)
   webdrivers (= 4.1.2)
-  webpacker (~> 5.0)
+  webpacker
 
 RUBY VERSION
    ruby 3.0.0p0
