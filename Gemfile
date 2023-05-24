@@ -7,16 +7,28 @@ gem "sass-rails", ">= 6"
 gem "webpacker"
 gem "turbolinks", "~> 5"
 gem "jbuilder"
+gem "bootstrap-sass", "3.4.1"
 gem "bootsnap", require: false
 gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 #Gemfile
 gem "devise", "~> 4.1"
+gem "slim"
+gem "rails-i18n"
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
+gem "sidekiq"
+gem "whenever"
+gem "kaminari"   
+gem "ransack"     
+gem "bootstrap-kaminari-views"
+gem "pry-rails", :group => :development
 
 
 group :development, :test do
   gem "sqlite3"
-  # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
