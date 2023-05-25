@@ -63,3 +63,4 @@ vi:
       not_saved:
         one: "1 lỗi khiến %{resource} này không được lưu:"
         other: "%{count} lỗi đã ngăn không cho lưu %{resource} này:"
+  
