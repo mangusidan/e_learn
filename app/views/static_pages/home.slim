@@ -1,7 +1,7 @@
 - provide(:title, "Home")
 .center.jumbotron
   h1
-    | E-Learning System
+    = t "static_page.title"
   br 
   br 
   br
@@ -12,8 +12,8 @@
   br 
   br
   p
-    |  Click this button if you dont have an account
+    = t "static_page.click_btn" 
   p
-    = link_to "Sign up now!", new_user_registration_path , class: "btn btn-lg btn-primary"
+    = link_to I18n.t("static_page.sign_up_now"), new_user_registration_path , class: "btn btn-lg btn-primary"
   br
   br

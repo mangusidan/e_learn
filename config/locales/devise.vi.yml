@@ -63,4 +63,10 @@ vi:
       not_saved:
         one: "1 lỗi khiến %{resource} này không được lưu:"
         other: "%{count} lỗi đã ngăn không cho lưu %{resource} này:"
-  
+  static_page:
+    sign_up_now: "đăng ký ngay"
+    click_btn: "Nhấp vào nút này nếu bạn chưa có tài khoản"
+    title: "E-Learning System"
+    footer:
+      by: "Web Design Copyright © 2022."
+      team: "Mangusidan"
