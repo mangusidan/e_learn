@@ -12,6 +12,17 @@ gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 #Gemfile
 gem "devise", "~> 4.1"
+gem "slim"
+gem "rails-i18n"
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
+gem "sidekiq"
+gem "whenever"
+gem "kaminari"   
+gem "ransack"     
+gem "bootstrap-kaminari-views"
+gem "pry-rails", :group => :development
 
 
 group :development, :test do
