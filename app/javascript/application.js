@@ -8,6 +8,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 require("jquery")
 import "bootstrap"
+// require twitter/bootstrap
 require_tree .
 Rails.start()
 Turbolinks.start()
