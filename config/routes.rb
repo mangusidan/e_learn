@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user/show'
   root "static_pages#home"
   get "static_pages/home"
   devise_for :users , :controllers => { registrations: 'users/registrations', 
@@ -7,8 +8,11 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     get '/users/sign_out' => 'devise/sessions#destroy'
+    get '/users/edit' => 'devise/registrations#edit'
   end
-  
+
+  resources :user, only: [:show]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

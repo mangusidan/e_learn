@@ -25,6 +25,7 @@ Devise.setup do |config|
     provider :google_oauth2, Rails.application.credentials['GOOGLE_CLIENT_ID'], 
         Rails.application.credentials['GOOGLE_CLIENT_SECRET'], {scope: "email"}
   end
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
