@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_01_044053) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_041759) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_044053) do
 
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
-    t.integer "followed_id"
+    t.integer "followee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,6 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_044053) do
     t.string "provider"
     t.string "uid"
     t.string "image"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

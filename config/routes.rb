@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'user/show'
+  # get "user/show"
   root "static_pages#home"
   get "static_pages/home"
+  get "user/:id" => "users#show", as: :user
+
   devise_for :users , :controllers => { registrations: 'users/registrations', 
                                         sessions:'users/sessions',
                                         omniauth_callbacks: 'users/omniauth_callbacks'}
@@ -10,11 +12,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
     get '/users/edit' => 'devise/registrations#edit'
   end
-
-  resources :user, only: [:show]
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
+  resources :users, only: [:index, :show]
+  post 'users/follow', to: 'users#follow'
+  delete 'users/unfollow', to: 'users#unfollow'
 end

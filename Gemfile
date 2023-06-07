@@ -27,6 +27,7 @@ gem "ransack"
 gem "bootstrap-kaminari-views"
 gem "pry-rails", :group => :development
 gem "image_processing", "~> 1.2"
+gem "turbo-rails"
 
 group :development, :test do
   gem "sqlite3"

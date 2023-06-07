@@ -70,3 +70,7 @@ vi:
     footer:
       by: "Web Design Copyright © 2022."
       team: "Mangusidan"
+    follow: "Follow"
+    unfollow: "Unfollow"
+    following: "Following"
+    unfollowing: "Followers"
