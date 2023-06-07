@@ -8,6 +8,7 @@
 #
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
@@ -25,6 +26,7 @@ Devise.setup do |config|
     provider :google_oauth2, Rails.application.credentials['GOOGLE_CLIENT_ID'], 
         Rails.application.credentials['GOOGLE_CLIENT_SECRET'], {scope: "email"}
   end
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -79,7 +81,7 @@ Devise.setup do |config|
   # given strategies, for example, `config.params_authenticatable = [:database]` will
   # enable it only for database (email + password) authentication.
   # config.params_authenticatable = true
-
+  
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
   # given strategies, for example, `config.http_authenticatable = [:database]` will

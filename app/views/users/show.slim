@@ -1,0 +1,10 @@
+- provide :title, @user.email
+.row
+  aside.col-md-4
+    section.user_info
+      - if @user.present? && @user.avatar.attached?
+        = link_to image_tag(@user.avatar.variant(resize_to_limit: [150, 150]) , class: 'avatar'), @user
+      h1
+        = @user.email
+      main
+        = render "users/user", user: @user

@@ -20,14 +20,14 @@ gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
 gem "omniauth-rails_csrf_protection" , "~> 1.0"
 gem "figaro"
-
 gem "sidekiq"
 gem "whenever"
 gem "kaminari"   
 gem "ransack"     
 gem "bootstrap-kaminari-views"
 gem "pry-rails", :group => :development
-
+gem "image_processing", "~> 1.2"
+gem "turbo-rails"
 
 group :development, :test do
   gem "sqlite3"

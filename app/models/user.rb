@@ -3,15 +3,24 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
+         :omniauthable, omniauth_providers: [:google_oauth2, :facebook];  
   
-  has_many :activities
-  has_many :active_relationships,  class_name: Relationship.name,
-            foreign_key: :follower_id, dependent: :destroy
-  has_many :passive_relationships, class_name: Relationship.name,
-            foreign_key: :followed_id, dependent: :destroy
-  has_many :following, through: :active_relationships, source: :followed
-  has_many :followers, through: :passive_relationships, source: :follower
+  has_one_attached :avatar;
+  
+  has_many :followed_users,
+           foreign_key: :follower_id,
+           class_name: 'Relationship',
+           dependent: :destroy
+
+  has_many :followees, through: :followed_users, dependent: :destroy
+
+  has_many :following_users,
+           foreign_key: :followee_id,
+           class_name: 'Relationship',
+           dependent: :destroy
+
+  has_many :followers, through: :following_users, dependent: :destroy
+  
   has_many :lessons
 
   def self.from_omniauth(auth)
@@ -19,7 +28,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.username = auth.info.username
-      user.avatar = auth.info.image
+      user.image = auth.info.image
     end
   end
 end

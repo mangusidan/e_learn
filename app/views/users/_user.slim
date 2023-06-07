@@ -1,0 +1,8 @@
+= render 'users/follower_count', user: user
+div
+  = user.followees.count
+  |  following
+- if user == current_user
+  = link_to "Edit Profile", edit_user_registration_path
+- elsif current_user
+  = render 'users/follow_button', user: user
